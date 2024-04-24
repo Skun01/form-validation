@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <form action="" class="form" id = "form-2">
+        <div class="header-form">
+            <h3 class="heading">
+                Đăng nhập
+            </h3>
+            <p class="desc">Đăng nhập vào thế giới của chúng ta</p>
+        </div>
+
+
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-typing" placeholder="VD: emai@gmail.com">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password" id="password" class="form-typing" placeholder="Nhập mật khẩu">
+            <span class="form-message"></span>
+        </div>
+        <button class="form-btn">Đăng nhập</button>
+
+        <div class="sign-in-nav">Chưa có tài khoản?   <a href="signIn.html">Đăng ký</a></div>
+    </form>
+
+    <script src="./assets/js/validator.js"></script>
+    <script>
+        validator({
+            form: "#form-2",
+            button: '.form-btn',
+            rules:[
+                required("#email"),
+                checkEmail("#email"),
+                required("#password"),
+                checkPassword("#password")
+            ]
+        });
+
+    </script>
+</body>
+</html>
